@@ -57,4 +57,13 @@ def first_element(my_list):
     return my_list['elements'][0]
 
 
- 
+def sub_list(my_list, pos_i, num_elements):
+     
+    if pos_i < 1 or pos_i > my_list["size"]:
+        raise IndexError("list index out of range")
+
+    sublist = {
+        "elements": my_list["elements"][pos_i - 1: pos_i - 1 + num_elements],
+        "size": min(num_elements, my_list["size"] - (pos_i - 1))
+    }
+    return sublist
