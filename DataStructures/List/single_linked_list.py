@@ -71,3 +71,27 @@ def firs_element(my_list):
     if my_list['size'] == 0:
         raise Exception('IndexError: list index out of range')
     return my_list['first']['info']
+
+def sub_list(my_list, pos_i, num_elements):
+    """
+    Retorna una sublista desde la posición `pos_i` con `num_elements` elementos.
+    """
+    if my_list["size"] == 0 or pos_i < 1 or pos_i > my_list["size"]:
+        raise IndexError("Posición fuera de rango.")
+
+    new_sublist = new_list()  
+    current = my_list["first"]
+    index = 1
+
+    while current is not None and num_elements > 0:
+        if index >= pos_i:
+            add_last(new_sublist, current["info"])
+            num_elements -= 1
+        current = current["next"]
+        index += 1
+
+    return new_sublist
+
+def iterator(lst):
+   
+    return [element for element in lst] 
