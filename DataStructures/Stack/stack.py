@@ -41,3 +41,6 @@ def top(my_stack):
 
 def size(my_stack):
     return my_stack['size']
+
+def peek(stack):
+    return top(stack)

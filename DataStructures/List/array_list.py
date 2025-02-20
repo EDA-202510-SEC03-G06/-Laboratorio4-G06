@@ -67,3 +67,7 @@ def sub_list(my_list, pos_i, num_elements):
         "size": min(num_elements, my_list["size"] - (pos_i - 1))
     }
     return sublist
+
+def iterator(lst):
+   
+    return [element for element in lst] 

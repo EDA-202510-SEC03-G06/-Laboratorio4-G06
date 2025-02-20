@@ -304,7 +304,7 @@ def set_book_sublist(catalog, size):
     """
     Crea una sublista de libros de tamaño size
     """
-    algo = lt.sub_list(catalog["books"], 0, size)
+    algo = lt.sub_list(catalog["books"], 1, size)
     catalog["book_sublist"] = algo
     return catalog
 
@@ -376,9 +376,9 @@ def measure_stack_performance(catalog):
     # Medir top
     start_time = get_time()
     # TODO Implementar la medición de tiempo para la operación top
-    top_element = st.top(stack) 
+    peek_element = st.peek(stack) 
     end_time = get_time()
-    top_time = delta_time(start_time, end_time)
+    peek_time = delta_time(start_time, end_time)
 
     # Medir dequeue
     # TODO Implementar la medición de tiempo para la operación pop
@@ -389,6 +389,6 @@ def measure_stack_performance(catalog):
 
     return {
         "push_time": push_time,
-        "top_time": top_time,
+        "peek_time": peek_time,
         "pop_time": pop_time
     }
